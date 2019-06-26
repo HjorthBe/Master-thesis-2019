@@ -1,6 +1,6 @@
 # _______________________________________________________
 # kernel search on Air passenger data with GP regression.
-# The search is performed with base the kernels: SE, PER, 
+# The search is performed with the base kernels: SE, PER, 
 # LIN and RQ.
 # _______________________________________________________
 
@@ -133,7 +133,7 @@ for(i in 1:3){# base kernels are set to k_none
 # search operators
 operations_1 <- c(`+`, `*`)
 operations_2 <- c(`+`, `*`)
-operation_sign <- c("+", "×")
+operation_sign <- c("+", "Ã—")
 # nested kernel functions, 
 # the first base kernel is multiplied or summed with the second base kernel
 k_composition_1 <- function(x, y){
@@ -353,7 +353,7 @@ abline(v = 1960.917, lwd = 2, lty = 2, col = "grey50")
 # 
 res_table_II <- data.frame(matrix(NA, nrow = 11, ncol = 8))
 names(res_table_II) <- c(1:8)
-row.names(res_table_II) <- c("CV", "MSE test","k_0{+,×}k_1", "h_param_1", 
+row.names(res_table_II) <- c("CV", "MSE test","k_0{+,Ã—}k_1", "h_param_1", 
                              "h_param_2", "h_param_3", "h_param_4", 
                              "o_2", "k_2", "h_param_5", "h_param_6")
 # k.search for-loop
@@ -456,7 +456,7 @@ first_II <- match(a8, a7)[1]
 res_table_II[,first_II]
 # > res_table_II[,first_II]
 # [1] "377.338"      "950.497"      "(k_se+k_per)" "3.25"         "-"           
-# [6] "0.55"         "0.55"         "×"            "k_per"        "1.45"        
+# [6] "0.55"         "0.55"         "Ã—"            "k_per"        "1.45"        
 # [11] "1"  
 
 k_0 <- which(res_table_I[,first_I][3] == kernel_names)
